@@ -43,11 +43,6 @@ genera.addEvenListener('click', function () {
 
     const price = document.getElementById('prezzo');
 
-    // Genero il prezzo finale in decimali
-
-    price.innerHTML = prezzo.toFixed(2);
-
-
 })
 
 
