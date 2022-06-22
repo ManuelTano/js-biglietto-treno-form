@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+}
+
+header {
+    padding: 25px;
+    height: 360px;
+    background-color: lightgoldenrodyellow;
+    color: white;
+}
+
+section {
+  background-color: #B91350;
+  padding: 25px;
+}
+
+img {
+    width: 80%;
+    height: 200px;
+}
+
+#white {
+    background-color: white;
+}
