@@ -36,7 +36,7 @@
 
         <!-- INSERIMENTO DATI -->
 
-        <h2 class="text-center mb-4 text-white fw-bold">CALCOLA IL PREZZO DEL TUO BIGLIETTO</h2>
+        <h2 class="text-center mb-5 text-white fw-bold">CALCOLA IL PREZZO DEL TUO BIGLIETTO</h2>
         <div class="container">
           <div class="row">
             <div class="col text-center">
@@ -48,8 +48,8 @@
               <input id="distanza" type="number" name="" value="" placeholder="Inserisci i km da percorrere">
             </div>
             <div class="col text-center">
-              <label for="età" class="text-white">Fascia d'et&agrave;</label>
-              <select id="età" class="" name="">
+              <label for="eta" class="text-white">Fascia d'et&agrave;</label>
+              <select id="eta" class="" name="">
                 <option value="junior">Minorenne</option>
                 <option value="maggiorenne">Maggiorenne</option>
                 <option value="senior">Over 65</option>
@@ -61,11 +61,11 @@
 
           <div class="row justify-content-center">
             <div class="col-4 text-end">
-            <button id="genera" class="mt-4 btn bg-white">Genera</button>
+            <button id="genera" class="mt-5 btn bg-white">Genera</button>
 
             </div>
             <div class="col-4">
-            <button id="annulla" class="mt-4 btn bg-white">Annulla</button>
+            <button id="annulla" class="mt-5 btn bg-white">Annulla</button>
 
             </div>
           </div>
@@ -76,29 +76,31 @@
     <!-- IL TUO BIGLIETTO -->
 
     <section id="white">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-12 text-center">
-                    <h2 class="fw-bold">IL TUO BIGLIETTO</h2>
-                </div>
-            </div>
-            <div>
-                <h4 class="mb-4">DETTAGLIO PASSEGGERI</h4>
-            </div>
+        <div class="container" >
+            <div id="ticket">
 
-            <div class="row border border-success p-2 mb-2">
-                <div class="col-4">
-                    <h4 class="fw-bold">NOME COGNOME</h4>
-                    <p id="nomepasseggero"></p>
+                <div class="row justify-content-center">
+                    <div class="col-12 text-center">
+                        <h2 class="fw-bold">IL TUO BIGLIETTO</h2>
+                    </div>
                 </div>
-                <div class="col-2">
-                    <h5 class="fw-bold">Offerta</h5>
-                    <p id="offerta"></p>
+                <div>
+                    <h4 class="mb-4">DETTAGLIO PASSEGGERI</h4>
                 </div>
-                <div class="col-2">
-                    <h5 class="fw-bold">Carrozza</h5>
-                    <p id="carrozza"></p>
-                </div>
+                
+                <div class="row border border-success p-2 mb-2">
+                    <div class="col-4">
+                        <h4 class="fw-bold">NOME COGNOME</h4>
+                        <p id="nomepasseggero"></p>
+                    </div>
+                    <div class="col-2">
+                        <h5 class="fw-bold">Offerta</h5>
+                        <p id="offerta"></p>
+                    </div>
+                    <div class="col-2">
+                        <h5 class="fw-bold">Carrozza</h5>
+                        <p id="carrozza"></p>
+                    </div>
                 <div class="col-2">
                     <h5 class="fw-bold">Codice CP</h5>
                     <p id="codicecp"></p>
@@ -108,6 +110,7 @@
                     <p id="costobiglietto"></p>
                 </div>
             </div>
+           </div>
         </div>
     </section>
 

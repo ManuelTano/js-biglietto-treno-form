@@ -9,41 +9,54 @@
 // (formattato con massimo due decimali, per indicare centesimi sul prezzo).
 
 const genera = document.getElementById('genera');
-genera.addEvenListener('click', function () {
+genera.addEventListener('click', function () {
     
-    const username = document.getElementById('nomecognome');
-    const distance = document.getElementById('distanza');
-    const age = document.getElementById('età');
+    const inputUsername = document.getElementById('nomecognome');
+    const username = inputUsername.value;
+
+    const inputDistance = document.getElementById('distanza');
+    const distance = parseInt(inputDistance.value);
+
+    const inputAge = document.getElementById('eta');
+    const age = inputAge.value;
+
 
     let prezzo = distance * 0.21;
 
-
-        // se l'età è minore di 18
-
-        if (age < 18) {
-
-            // mi calcolo il prezzo scontato del 20%
-            hasDiscount = true;
-            prezzo = (prezzo - (prezzo * 0.2));
-        }
-
-        // se, invece,  l'età è maggiore di 65
-        
-        if (age > 65) {
-
-            // mi calcolo il prezzo scontato del 40%
-
-            hasDiscount = true;
-            prezzo = (prezzo - (prezzo * 0.4));
-
-        }
+    let offerta = "Tariffa Standard"
 
 
-    // Recupero elemento
+    if (age == "junior") {
 
-    const price = document.getElementById('prezzo');
+        prezzo = (prezzo - (prezzo * 0.2));
+        offerta = "Sconto Junior";
+
+       } 
+       
+       else if (age == "senior") {
+
+        prezzo = (prezzo - (prezzo * 0.4));
+        offerta = "Sconto Senior";
+
+       } 
+       
+        const carrozza = Math.floor(Math.random() * 9) + 1;
+        const cp = Math.floor(Math.random() * (100000 + 1 - 90000 )) + 90000;
+
+
+        document.getElementById('nomepassegero').innerHTML = username;
+        document.getElementById('offerta').innerHTML = offerta;
+        document.getElementById('costobiglietto').innerHTML = prezzo.toFixed(2);
+        document.getElementById('carrozza').innerHTML = carrozza;
+        document.getElementById('codicecp').innerHTML = cp;
+
+        let ticket = document.getElementById('ticket');
+        ticket.classList.remove('hidden');
+        ticket.classList.add('show');
+      
 
 })
+   
 
 
 
