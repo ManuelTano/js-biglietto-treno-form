@@ -58,7 +58,7 @@ confirmButton.addEventListener('click', function () {
        
     else if (ageValue === "senior") {
 
-        prezzo *= 0.6;
+        price *= 0.6;
         rateName = "Tariffa Senior";
 
     } 
