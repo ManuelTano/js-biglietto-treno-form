@@ -8,55 +8,90 @@
 // Il recap dei dati e l'output del prezzo finale va stampato in pagina
 // (formattato con massimo due decimali, per indicare centesimi sul prezzo).
 
-const genera = document.getElementById('genera');
-genera.addEventListener('click', function () {
+
+// FORM ELEMENTS 
+const nameField = document.getElementById('nomecognome');
+const kmsField = document.getElementById('distanza');
+const ageField = document.getElementById('eta');
+const confirmButton = document.getElementById('genera');
+const cancelButton = document.getElementById('annulla');
+const buyButton = document.getElementById('buy');
+
+// TICKET ELEMENTS
+const ticketSection = document.getElementById('ticket');
+const passengerElement = document.getElementById('nomepasseggero');
+const rateElement = document.getElementById('offerta');
+const carElement = document.getElementById('carrozza');
+const pnrElement = document.getElementById('codicecp');
+const priceElement = document.getElementById('costobiglietto');
+
+
+confirmButton.addEventListener('click', function () {
     
-    const inputUsername = document.getElementById('nomecognome');
-    const username = inputUsername.value;
+    // Prendo i valori dal form 
 
-    const inputDistance = document.getElementById('distanza');
-    const distance = parseInt(inputDistance.value);
+    const nameValue = nameField.value;
+    const kmsValue = kmsField.value;
+    const ageValue = ageField.value;
 
-    const inputAge = document.getElementById('eta');
-    const age = inputAge.value;
+    // ! VALIDATION
 
+    if (!nameValue.trim() || isNaN(kmsValue) || kmsValue < 1) {
+        ticketSection.classList.add('d-none');
+        alert('Hai inserito valori non validi');
+        return;
+    }
+    
+    // Calcolo del prezzo base 
 
-    let prezzo = distance * 0.21;
+    let rateName = 'Tariffa Ordinaria'
+    let price = 0.21 * kmsValue;
 
-    let offerta = "Tariffa Standard"
+    // Verifico eventuale sconto
 
+    if (ageValue === "junior") {
 
-    if (age == "junior") {
+        price *= 0.8;
+        rateName = "Tariffa Junior";
 
-        prezzo = (prezzo - (prezzo * 0.2));
-        offerta = "Sconto Junior";
-
-       } 
+    } 
        
-       else if (age == "senior") {
+    else if (ageValue === "senior") {
 
-        prezzo = (prezzo - (prezzo * 0.4));
-        offerta = "Sconto Senior";
+        prezzo *= 0.6;
+        rateName = "Tariffa Senior";
 
-       } 
-       
-        const carrozza = Math.floor(Math.random() * 9) + 1;
-        const cp = Math.floor(Math.random() * (100000 + 1 - 90000 )) + 90000;
+    } 
+    
+    const car = Math.floor(Math.random() * 9) + 1;
+    const pnr = Math.floor(Math.random() * (100000 + 1 - 90000 )) + 90000;
 
+    // Mostrare i dati nel biglietto
 
-        document.getElementById('nomepassegero').innerHTML = username;
-        document.getElementById('offerta').innerHTML = offerta;
-        document.getElementById('costobiglietto').innerHTML = prezzo.toFixed(2);
-        document.getElementById('carrozza').innerHTML = carrozza;
-        document.getElementById('codicecp').innerHTML = cp;
+    passengerElement.innerText = nameValue;
+    rateElement.innerText = rateName;
+    carElement.innerText = '9';
+    pnrElement.innerText = '94873';
+    priceElement.innerText = '€' + price.toFixed(2);
 
-        let ticket = document.getElementById('ticket');
-        ticket.classList.remove('hidden');
-        ticket.classList.add('show');
-      
+     // Mostrare il biglietto
 
+     ticketSection.classList.remove('d-none');
+
+});
+
+buyButton.addEventListener('click', function() {
+    alert('Il tuo biglietto è stato acquistato');
+    window.location.reload();
 })
-   
+
+cancelButton.addEventListener('click', function() {
+    nameField.value = '';
+    kmsField.value = '1';
+    ageField.value = '';
+
+    ticketSection.classList.add('d-none');
+})
 
 
 

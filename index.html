@@ -75,23 +75,21 @@
 
     <!-- IL TUO BIGLIETTO -->
 
-    <section id="white">
-        <div class="container" >
-            <div id="ticket">
-
+    <section id="ticket" class=" d-none">
+            <div class="container" >
                 <div class="row justify-content-center">
                     <div class="col-12 text-center">
-                        <h2 class="fw-bold">IL TUO BIGLIETTO</h2>
+                        <h2 class="fw-bold text-white">IL TUO BIGLIETTO</h2>
                     </div>
                 </div>
                 <div>
-                    <h4 class="mb-4">DETTAGLIO PASSEGGERI</h4>
+                    <h4 class="mb-4 text-white">DETTAGLIO PASSEGGERI</h4>
                 </div>
                 
-                <div class="row border border-success p-2 mb-2">
+                <div class="row border border-success p-2 mb-2 bg-white ">
                     <div class="col-4">
                         <h4 class="fw-bold">NOME COGNOME</h4>
-                        <p id="nomepasseggero"></p>
+                        <p id="nomepasseggero" class="fw-bold"></p>
                     </div>
                     <div class="col-2">
                         <h5 class="fw-bold">Offerta</h5>
@@ -101,17 +99,21 @@
                         <h5 class="fw-bold">Carrozza</h5>
                         <p id="carrozza"></p>
                     </div>
-                <div class="col-2">
-                    <h5 class="fw-bold">Codice CP</h5>
-                    <p id="codicecp"></p>
+                     <div class="col-2">
+                        <h5 class="fw-bold">Codice CP</h5>
+                        <p id="codicecp"></p>
+                    </div>
+                    <div class="col-2">
+                        <h5 class="fw-bold">Costo biglietto</h5>
+                        <p id="costobiglietto"></p>
+                    </div>
                 </div>
-                <div class="col-2">
-                    <h5 class="fw-bold">Costo biglietto</h5>
-                    <p id="costobiglietto"></p>
-                </div>
+                <div class="row justify-content-center">
+                    <div class="col text-end">
+                        <button id="buy" class="mt-5 btn bg-success text-white">Compra</button>
+                    </div>
+                  </div>
             </div>
-           </div>
-        </div>
     </section>
 
     <script src="js/script.js"></script>
